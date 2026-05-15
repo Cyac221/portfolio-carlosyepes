@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" id="htmlRoot">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,12 +24,13 @@
         <span class="sr-only">Abrir menú</span>
       </button>
       <ul class="nav__menu" id="navMenu">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Proyectos</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
       </ul>
 
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">ES</button>
       <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
         <span class="theme-toggle__icon" aria-hidden="true">☀</span>
       </button>
@@ -42,14 +43,14 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__text">
-          <p class="badge">Data Analyst · Data Engineer · Marketing Analytics</p>
+          <p class="badge" data-i18n="hero_badge">Data Analyst · Data Engineer · Marketing Analytics</p>
           <h1>Hola, soy <span class="accent">Carlos</span>.</h1>
           <p class="lead">
-            Construyo pipelines, dashboards y modelos que convierten datos crudos en decisiones de negocio. 3 años conectando el mundo técnico con el estratégico.
+            <span data-i18n="hero_lead">Construyo pipelines, dashboards y modelos que convierten datos crudos en decisiones de negocio. 3 años conectando el mundo técnico con el estratégico.</span>
           </p>
           <div class="hero__cta">
-            <a class="btn" href="#projects">Ver proyectos</a>
-            <a class="btn btn--ghost" href="#contact">Hablemos</a>
+            <a class="btn" href="#projects" data-i18n="hero_cta_projects">Ver proyectos</a>
+            <a class="btn btn--ghost" href="#contact" data-i18n="hero_cta_contact">Hablemos</a>
           </div>
           <ul class="hero__links">
             <li><a href="https://github.com/Cyac221" target="_blank" rel="noreferrer">GitHub</a></li>
@@ -61,9 +62,9 @@
         <div class="hero__card" aria-hidden="true">
           <img class="avatar" src="img/avatar.png" alt="Avatar de Carlos" />
           <div class="mini-stats">
-            <div class="stat"><span>3+</span><small>años exp.</small></div>
-            <div class="stat"><span>5+</span><small>proyectos</small></div>
-            <div class="stat"><span>3</span><small>clouds</small></div>
+            <div class="stat"><span>3+</span><small data-i18n="stat_years">años exp.</small></div>
+            <div class="stat"><span>5+</span><small data-i18n="stat_projects">proyectos</small></div>
+            <div class="stat"><span>3</span><small data-i18n="stat_clouds">clouds</small></div>
           </div>
         </div>
       </div>
@@ -72,26 +73,26 @@
     <!-- SOBRE MÍ -->
     <section id="about" class="section">
       <div class="container">
-        <h2>Sobre mí</h2>
+        <h2 data-i18n="about_title">Sobre mí</h2>
         <p class="about__lead">
-          Soy profesional en Marketing con 3 años evolucionando hacia el mundo de los datos. Empecé analizando campañas y audiencias, y terminé construyendo pipelines en AWS y automatizando reportes que antes tardaban días. Ese cruce entre negocio y tecnología es mi mayor diferenciador: entiendo qué pregunta hacerle al dato y cómo responderla con código.
+          <span data-i18n="about_p1">Soy profesional en Marketing con 3 años evolucionando hacia el mundo de los datos. Empecé analizando campañas y audiencias, y terminé construyendo pipelines en AWS y automatizando reportes que antes tardaban días. Ese cruce entre negocio y tecnología es mi mayor diferenciador: entiendo qué pregunta hacerle al dato y cómo responderla con código.</span>
         </p>
         <p class="about__lead" style="margin-top:.8rem;">
-          He trabajado en telecomunicaciones, fintech y agencias de marketing — sectores donde los datos no son un lujo, son la operación. Hoy busco un equipo donde pueda construir infraestructura de datos sólida <em>y</em> traducirla en insight accionable.
+          <span data-i18n="about_p2">He trabajado en telecomunicaciones, fintech y agencias de marketing — sectores donde los datos no son un lujo, son la operación. Hoy busco un equipo donde pueda construir infraestructura de datos sólida <em>y</em> traducirla en insight accionable.</span>
         </p>
 
         <div class="about__grid">
           <div class="card">
-            <h3>¿Qué hago?</h3>
-            <p>Diseño e implemento flujos de datos end-to-end: desde la ingesta hasta el dashboard. Automatizo reportes que liberan tiempo de equipos, construyo modelos predictivos y analizo el rendimiento de campañas con criterio de negocio.</p>
+            <h3 data-i18n="about_card1_title">¿Qué hago?</h3>
+            <p data-i18n="about_card1_body">Diseño e implemento flujos de datos end-to-end: desde la ingesta hasta el dashboard. Automatizo reportes que liberan tiempo de equipos, construyo modelos predictivos y analizo el rendimiento de campañas con criterio de negocio.</p>
           </div>
           <div class="card">
-            <h3>Stack</h3>
+            <h3 data-i18n="about_card2_title">Stack</h3>
             <p>Python · SQL · AWS (S3, Glue, Athena) · GCP / BigQuery · Power BI · Tableau · Git / GitHub · Excel avanzado</p>
           </div>
           <div class="card">
-            <h3>Metodología</h3>
-            <p>Pregunta de negocio → datos → hipótesis → experimento → decisión. Sin humo ni dashboards por complacer: cada análisis debe mover una aguja real.</p>
+            <h3 data-i18n="about_card3_title">Metodología</h3>
+            <p data-i18n="about_card3_body">Pregunta de negocio → datos → hipótesis → experimento → decisión. Sin humo ni dashboards por complacer: cada análisis debe mover una aguja real.</p>
           </div>
         </div>
       </div>
@@ -101,12 +102,12 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Proyectos</h2>
+          <h2 data-i18n="projects_title">Proyectos</h2>
           <div class="filters">
-            <button class="chip is-active" data-filter="all">Todos</button>
-            <button class="chip" data-filter="etl">ETL / Data Eng.</button>
-            <button class="chip" data-filter="dashboard">Dashboards</button>
-            <button class="chip" data-filter="ml">ML / Modelos</button>
+            <button class="chip is-active" data-filter="all" data-i18n="filter_all">Todos</button>
+            <button class="chip" data-filter="etl" data-i18n="filter_etl">ETL / Data Eng.</button>
+            <button class="chip" data-filter="dashboard" data-i18n="filter_dashboard">Dashboards</button>
+            <button class="chip" data-filter="ml" data-i18n="filter_ml">ML / Modelos</button>
           </div>
         </div>
 
@@ -116,8 +117,8 @@
             <div class="project__header">
               <span class="project__tag">Pipeline ETL</span>
             </div>
-            <h3><strong>Pipeline de ingesta con Requests</strong></h3>
-            <p>Diseño e implementación de un pipeline ETL sobre el API de transporte público de London para centralizar y automatizar extracciones de datos. Redujo de horas a minutos la disponibilidad de datos para análisis. Posterior visualizacion en Looker Studio</p>
+            <h3><strong data-i18n="proj1_title">Pipeline de ingesta con Requests</strong></h3>
+            <p data-i18n="proj1_desc">Diseño e implementación de un pipeline ETL sobre el API de transporte público de London para centralizar y automatizar extracciones de datos. Redujo de horas a minutos la disponibilidad de datos para análisis. Posterior visualizacion en Looker Studio</p>
             <ul class="tags">
               <li>Python</li><li>Requests</li><li>Pandas</li><li>Athena</li><li>SQL</li><li>Looker</li>
             </ul>
@@ -130,8 +131,8 @@
             <div class="project__header">
               <span class="project__tag">ML / Modelo predictivo</span>
             </div>
-            <h3><strong>Modelo predictivo de Churn</strong></h3>
-            <p>Construcción de un modelo de clasificación para anticipar el churn, permitiendo tomar decisiones proactivas en lugar de reactivas.</p>
+            <h3><strong data-i18n="proj2_title">Modelo predictivo de Churn</strong></h3>
+            <p data-i18n="proj2_desc">Construcción de un modelo de clasificación para anticipar el churn, permitiendo tomar decisiones proactivas en lugar de reactivas.</p>
             <ul class="tags">
               <li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>EDA</li><li>SQL</li><li>Data Modeling</li><li>Postgres</li><li>Jupyter Notebooks</li>
             </ul>
@@ -144,8 +145,8 @@
             <div class="project__header">
               <span class="project__tag">Dashboard</span>
             </div>
-            <h3><strong>ETL End to end Cloud (En construccion)</strong></h3>
-            <p>ETL End to end usando Psycopg2 Postgresql y SQL en python. Diseño de un Datawarehouse en Redshift (AWS) para el modelado y almacenamiento de datos</p>
+            <h3><strong data-i18n="proj3_title">ETL End to end Cloud (En construccion)</strong></h3>
+            <p data-i18n="proj3_desc">ETL End to end usando Psycopg2 Postgresql y SQL en python. Diseño de un Datawarehouse en Redshift (AWS) para el modelado y almacenamiento de datos</p>
             <ul class="tags">
               <li>Python</li><li>SQL</li><li>Redshift</li><li>AWS</li><li>pgAdmin</li>
             </ul>
@@ -157,7 +158,7 @@
         </div>
 
         <p class="projects__note">
-          Actualiza los títulos, descripciones y enlaces con los detalles reales de cada proyecto. <a href="https://github.com/Cyac221" target="_blank" rel="noreferrer">Ver todos en GitHub →</a>
+          <span data-i18n="projects_note">Ver todos en GitHub</span> <a href="https://github.com/Cyac221" target="_blank" rel="noreferrer">Ver todos en GitHub →</a>
         </p>
       </div>
     </section>
@@ -165,11 +166,11 @@
     <!-- SKILLS -->
     <section id="skills" class="section">
       <div class="container">
-        <h2>Skills</h2>
+        <h2 data-i18n="skills_title">Skills</h2>
         <div class="skills__grid">
 
           <div class="card skill__card">
-            <h3>Análisis de datos</h3>
+            <h3 data-i18n="skills_cat1">Análisis de datos</h3>
             <ul class="skill__list">
               <li><span>Python (pandas, numpy)</span><div class="bar"><div style="width:85%"></div></div></li>
               <li><span>SQL (Athena, BigQuery, Presto)</span><div class="bar"><div style="width:90%"></div></div></li>
@@ -179,7 +180,7 @@
           </div>
 
           <div class="card skill__card">
-            <h3>Ingeniería de datos</h3>
+            <h3 data-i18n="skills_cat2">Ingeniería de datos</h3>
             <ul class="skill__list">
               <li><span>AWS (S3, Glue, Athena)</span><div class="bar"><div style="width:75%"></div></div></li>
               <li><span>GCP / BigQuery</span><div class="bar"><div style="width:65%"></div></div></li>
@@ -189,7 +190,7 @@
           </div>
 
           <div class="card skill__card">
-            <h3>Visualización & Marketing</h3>
+            <h3 data-i18n="skills_cat3">Visualización & Marketing</h3>
             <ul class="skill__list">
               <li><span>Power BI</span><div class="bar"><div style="width:85%"></div></div></li>
               <li><span>Tableau</span><div class="bar"><div style="width:70%"></div></div></li>
@@ -206,8 +207,8 @@
     <section id="contact" class="section">
       <div class="container contact__grid">
         <div class="contact__info">
-          <h2>Hablemos</h2>
-          <p>Estoy abierto a roles remotos en LATAM y globales, y a posiciones presenciales en Medellín o Bogotá. Si buscas alguien que entienda tanto los datos como el negocio, escríbeme.</p>
+          <h2 data-i18n="contact_title">Hablemos</h2>
+          <p data-i18n="contact_desc">Estoy abierto a roles remotos en LATAM y globales, y a posiciones presenciales en Medellín o Bogotá. Si buscas alguien que entienda tanto los datos como el negocio, escríbeme.</p>
           <ul class="contact__links">
             <li>
               <a href="mailto:carlosyepes@email.com">
@@ -239,17 +240,17 @@
         <form class="form card" id="contactForm" novalidate>
           <label>
             Nombre
-            <input type="text" name="name" placeholder="Tu nombre" required />
+            <input type="text" name="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_placeholder" required />
           </label>
           <label>
             Email
-            <input type="email" name="email" placeholder="tu@email.com" required />
+            <input type="email" name="email" placeholder="tu@email.com" data-i18n-placeholder="form_email_placeholder" required />
           </label>
           <label>
             Mensaje
-            <textarea name="message" rows="4" placeholder="Cuéntame en qué puedo ayudarte..." required></textarea>
+            <textarea name="message" rows="4" placeholder="Cuéntame en qué puedo ayudarte..." data-i18n-placeholder="form_message_placeholder" required></textarea>
           </label>
-          <button class="btn" type="submit">Enviar mensaje</button>
+          <button class="btn" type="submit" data-i18n="form_submit">Enviar mensaje</button>
           <p class="form__hint" id="formHint" aria-live="polite"></p>
         </form>
       </div>
@@ -259,7 +260,7 @@
   <footer class="footer">
     <div class="container footer__grid">
       <p>© <span id="year"></span> Carlos Yepes · Medellín, Colombia</p>
-      <a href="#main">Volver arriba ↑</a>
+      <a href="#main" data-i18n="footer_back">Volver arriba ↑</a>
     </div>
   </footer>
 
