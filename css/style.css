@@ -157,7 +157,7 @@ ul { list-style: none; }
 }
 
 /* ─── HERO ────────────────────────────────────────────────────────────────── */
-.hero { padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 4rem); }
+.hero { position: relative; padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 4rem); }
 
 .hero__grid {
   display: grid;
@@ -268,6 +268,7 @@ h3 {
 }
 
 .avatar {
+  will-change: transform;
   width: clamp(160px, 22vw, 260px);
   filter: drop-shadow(0 12px 32px rgba(0,0,0,.35));
 }
@@ -612,4 +613,221 @@ textarea { resize: vertical; min-height: 110px; }
 @media (max-width: 360px) {
   .container { width: 96%; }
   .logo { font-size: 1rem; }
+}
+
+
+/* ── Partículas ───────────────────────────────────────────────────────────── */
+#particlesCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.hero__grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMACIONES — solo transform + opacity (GPU compositor, sin reflow)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero: entrada al cargar ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hero__location { animation: fadeIn  .45s ease both .05s; }
+.badge          { animation: fadeIn  .45s ease both .10s; }
+.hero h1        { animation: fadeUp  .55s cubic-bezier(.4,0,.2,1) both .18s; }
+.lead           { animation: fadeUp  .55s cubic-bezier(.4,0,.2,1) both .28s; }
+.hero__cta      { animation: fadeUp  .50s cubic-bezier(.4,0,.2,1) both .36s; }
+.hero__links    { animation: fadeUp  .50s cubic-bezier(.4,0,.2,1) both .42s; }
+.hero__card     { animation: scaleIn .60s cubic-bezier(.4,0,.2,1) both .22s; }
+
+/* ── Scroll reveal ───────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .55s cubic-bezier(.4,0,.2,1),
+              transform .55s cubic-bezier(.4,0,.2,1);
+}
+.reveal.is-visible      { opacity: 1; transform: translateY(0); }
+.reveal-delay-1.is-visible { transition-delay: .08s; }
+.reveal-delay-2.is-visible { transition-delay: .16s; }
+.reveal-delay-3.is-visible { transition-delay: .24s; }
+
+/* ── Nav: shrink al scroll ───────────────────────────────────────────────── */
+.header {
+  transition: padding .25s cubic-bezier(.4,0,.2,1),
+              box-shadow .25s cubic-bezier(.4,0,.2,1),
+              background-color .3s ease,
+              border-color .3s ease;
+}
+.nav { transition: padding .25s cubic-bezier(.4,0,.2,1); }
+
+.header--scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+.header--scrolled .nav { padding-top: .55rem; padding-bottom: .55rem; }
+:root.light .header--scrolled { box-shadow: 0 2px 16px rgba(0,0,0,.12); }
+
+/* ── Nav link activo ─────────────────────────────────────────────────────── */
+.nav__menu a {
+  position: relative;
+  transition: color .15s, background .15s;
+}
+.nav__menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: .75rem; right: .75rem;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s cubic-bezier(.4,0,.2,1);
+}
+.nav__menu a:hover::after,
+.nav__menu a.is-active::after { transform: scaleX(1); }
+.nav__menu a.is-active {
+  color: var(--text);
+  background: var(--accent-dim);
+}
+
+/* ── Nav móvil: slide down ───────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .nav__menu {
+    /* Visibilidad controlada por clip-path + opacity, no display */
+    display: flex !important;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity .22s ease,
+                transform .22s cubic-bezier(.4,0,.2,1),
+                visibility .22s;
+  }
+  .nav__menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Hamburger → X */
+  .nav__toggle { transition: transform .2s ease; }
+  .nav__toggle.is-open { transform: rotate(90deg); }
+}
+
+/* ── Theme toggle: spin del ícono ────────────────────────────────────────── */
+@keyframes iconSpin {
+  0%   { transform: rotate(0deg)   scale(1);   opacity: 1; }
+  40%  { transform: rotate(180deg) scale(.5);  opacity: 0; }
+  60%  { transform: rotate(180deg) scale(.5);  opacity: 0; }
+  100% { transform: rotate(360deg) scale(1);   opacity: 1; }
+}
+.theme-toggle__icon { display: inline-block; }
+.theme-toggle__icon.spin { animation: iconSpin .4s cubic-bezier(.4,0,.2,1) both; }
+
+/* ── Transición global de colores al cambiar tema ────────────────────────── */
+body,
+.card, .stat, .header, .nav__menu,
+input, textarea, .contact__icon {
+  transition: background-color .3s ease, color .3s ease,
+              border-color .3s ease;
+}
+
+/* ── Micro-interacciones ─────────────────────────────────────────────────── */
+.card {
+  transition: border-color .2s, transform .22s cubic-bezier(.4,0,.2,1),
+              box-shadow .22s cubic-bezier(.4,0,.2,1),
+              background-color .3s ease;
+}
+.card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.3); }
+:root.light .card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.10); }
+
+.btn { transition: filter .15s, transform .15s cubic-bezier(.4,0,.2,1); }
+.btn:active { transform: scale(.97); filter: brightness(.95); }
+
+.stat { transition: border-color .2s, transform .2s cubic-bezier(.4,0,.2,1),
+                    background-color .3s ease; }
+.stat:hover { transform: translateY(-3px); }
+
+/* ── prefers-reduced-motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    animation-delay: .01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ── Typewriter ───────────────────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 300;
+  margin-left: 1px;
+  animation: blink .75s step-end infinite;
+  transition: opacity .3s ease;
+}
+.typewriter-cursor.cursor-hide {
+  opacity: 0;
+  animation: none;
+}
+
+/* Evitar salto de layout mientras el nombre está vacío */
+#typewriterTarget {
+  min-width: 2px;
+  display: inline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor { animation: none; opacity: 1; }
+}
+
+/* ── Ripple ───────────────────────────────────────────────────────────────── */
+.btn, .chip, .lang-toggle, .theme-toggle, .nav__toggle {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes ripple {
+  from { transform: scale(0); opacity: .35; }
+  to   { transform: scale(1); opacity: 0;   }
+}
+
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  animation: ripple .5s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+/* En el ghost button el ripple es más sutil */
+.btn--ghost .ripple-wave { opacity: .15; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple-wave { animation: none; display: none; }
 }
