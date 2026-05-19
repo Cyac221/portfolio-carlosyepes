@@ -1,20 +1,23 @@
 // ─── i18n: sistema de idiomas ────────────────────────────────────────────────
 const TRANSLATIONS = {
   es: {
-    // Nav
+    // Nav & aria
     nav_about: "Sobre mí",
     nav_projects: "Proyectos",
     nav_skills: "Skills",
     nav_contact: "Contacto",
+    nav_aria: "Navegación principal",
+    theme_aria: "Cambiar tema",
 
     // Hero
+    hero_greeting: "Hola, soy",
+    hero_location: "Medellín, Colombia",
     hero_badge: "Data Analyst · Data Engineer · Marketing Analytics",
     hero_lead: "Construyo pipelines, dashboards y modelos que convierten datos crudos en decisiones de negocio. 3 años conectando el mundo técnico con el estratégico.",
     hero_cta_projects: "Ver proyectos",
     hero_cta_contact: "Hablemos",
     stat_years: "años exp.",
     stat_projects: "proyectos",
-    stat_clouds: "clouds",
 
     // About
     about_title: "Sobre mí",
@@ -33,12 +36,12 @@ const TRANSLATIONS = {
     filter_dashboard: "Dashboards",
     filter_ml: "ML / Modelos",
     proj1_title: "Pipeline de ingesta con Requests",
-    proj1_desc: "Diseño e implementación de un pipeline ETL sobre el API de transporte público de London para centralizar y automatizar extracciones de datos. Redujo de horas a minutos la disponibilidad de datos para análisis. Posterior visualización en Looker Studio.",
+    proj1_desc: "Diseño e implementación de un pipeline ETL sobre el API de transporte público de Londres para centralizar y automatizar extracciones de datos. Redujo de horas a minutos la disponibilidad de datos para análisis. Posterior visualización en Looker Studio.",
     proj2_title: "Modelo predictivo de Churn",
     proj2_desc: "Construcción de un modelo de clasificación para anticipar el churn, permitiendo tomar decisiones proactivas en lugar de reactivas.",
-    proj3_title: "ETL End to End Cloud (En construcción)",
-    proj3_desc: "ETL End to end usando Psycopg2, PostgreSQL y SQL en Python. Diseño de un Datawarehouse en Redshift (AWS) para el modelado y almacenamiento de datos.",
-    projects_note: "Ver todos en GitHub",
+    proj3_title: "ETL End-to-End Cloud (En construcción)",
+    proj3_desc: "Pipeline ETL completo usando Psycopg2, PostgreSQL y SQL en Python. Diseño de un Datawarehouse en Redshift (AWS) para el modelado y almacenamiento de datos.",
+    projects_note: "Ver todos en GitHub →",
 
     // Skills
     skills_title: "Skills",
@@ -46,41 +49,50 @@ const TRANSLATIONS = {
     skills_cat2: "Ingeniería de datos",
     skills_cat3: "Visualización & Marketing",
 
-    // Contact
+    // Contact & form
     contact_title: "Hablemos",
-    contact_desc: "Estoy abierto a roles remotos en LATAM y globales, y a posiciones presenciales en Medellín o Bogotá. Si buscas alguien que entienda tanto los datos como el negocio, escríbeme.",
+    contact_desc: "Estoy abierto a roles 100% remotos en LATAM y globales, y presencial en Medellín. Si buscas alguien que entienda tanto los datos como el negocio, escríbeme.",
+    form_name_label: "Nombre",
+    form_email_label: "Email",
+    form_message_label: "Mensaje",
     form_name_placeholder: "Tu nombre",
     form_email_placeholder: "tu@email.com",
     form_message_placeholder: "Cuéntame en qué puedo ayudarte...",
     form_submit: "Enviar mensaje",
-    form_success: "¡Mensaje enviado! Te respondo pronto.",
-    form_error: "Algo falló. Escríbeme directamente a tu email.",
     form_sending: "Enviando...",
+    form_success: "¡Mensaje enviado! Te respondo pronto.",
+    form_error: "Algo falló. Intentalo de nuevo",
 
     // Footer
     footer_back: "Volver arriba ↑",
+    footer_copy: "Carlos Yepes · Medellín, Colombia",
+    page_title: "Carlos Yepes | Data Analyst & Engineer",
+    meta_desc: "Carlos Yepes — Data Analyst & Engineer. Transformo datos en decisiones de negocio. Python, SQL, AWS, Power BI.",
   },
 
   en: {
-    // Nav
+    // Nav & aria
     nav_about: "About",
     nav_projects: "Projects",
     nav_skills: "Skills",
     nav_contact: "Contact",
+    nav_aria: "Main navigation",
+    theme_aria: "Toggle theme",
 
     // Hero
+    hero_greeting: "Hi, I'm",
+    hero_location: "Medellín, Colombia",
     hero_badge: "Data Analyst · Data Engineer · Marketing Analytics",
     hero_lead: "I build pipelines, dashboards, and models that turn raw data into business decisions. 3 years bridging the technical and strategic worlds.",
     hero_cta_projects: "View projects",
-    hero_cta_contact: "Let\'s talk",
+    hero_cta_contact: "Let's talk",
     stat_years: "yrs exp.",
     stat_projects: "projects",
-    stat_clouds: "clouds",
 
     // About
     about_title: "About me",
-    about_p1: "I\'m a Marketing professional with 3 years growing into the data world. I started analyzing campaigns and audiences, and ended up building AWS pipelines and automating reports that used to take days. That intersection of business and technology is my biggest differentiator: I know what question to ask the data and how to answer it with code.",
-    about_p2: "I\'ve worked in telecommunications, fintech, and marketing agencies — industries where data isn\'t a luxury, it\'s the operation. Today I\'m looking for a team where I can build solid data infrastructure and translate it into actionable insight.",
+    about_p1: "I'm a Marketing professional with 3 years growing into the data world. I started by analyzing campaigns and audiences, and ended up building AWS pipelines and automating reports that used to take days. That intersection of business and technology is my biggest differentiator: I know what question to ask the data — and how to answer it with code.",
+    about_p2: "I've worked in telecommunications, fintech, and marketing agencies — industries where data isn't a luxury, it's the operation. I'm now looking for a team where I can build solid data infrastructure and translate it into actionable insight.",
     about_card1_title: "What I do",
     about_card1_body: "I design and implement end-to-end data flows: from ingestion to dashboard. I automate reports that free up team time, build predictive models, and analyze campaign performance with a business lens.",
     about_card2_title: "Stack",
@@ -93,13 +105,13 @@ const TRANSLATIONS = {
     filter_etl: "ETL / Data Eng.",
     filter_dashboard: "Dashboards",
     filter_ml: "ML / Models",
-    proj1_title: "Ingestion Pipeline with Requests",
-    proj1_desc: "Design and implementation of an ETL pipeline on the London public transport API to centralize and automate data extraction. Reduced data availability for analysis from hours to minutes. Subsequent visualization in Looker Studio.",
+    proj1_title: "Requests Ingestion Pipeline",
+    proj1_desc: "Design and implementation of an ETL pipeline on the London public transport API to centralize and automate data extraction. Reduced data availability for analysis from hours to minutes. Visualization built in Looker Studio.",
     proj2_title: "Churn Prediction Model",
-    proj2_desc: "Built a classification model to anticipate churn, enabling proactive rather than reactive decision-making.",
+    proj2_desc: "Built a classification model to anticipate customer churn, enabling proactive decisions rather than reactive ones.",
     proj3_title: "End-to-End Cloud ETL (In progress)",
-    proj3_desc: "End-to-end ETL using Psycopg2, PostgreSQL, and SQL in Python. Datawarehouse design in Redshift (AWS) for data modeling and storage.",
-    projects_note: "View all on GitHub",
+    proj3_desc: "Full ETL pipeline using Psycopg2, PostgreSQL, and SQL in Python. Datawarehouse design in AWS Redshift for data modeling and storage.",
+    projects_note: "View all on GitHub →",
 
     // Skills
     skills_title: "Skills",
@@ -107,19 +119,25 @@ const TRANSLATIONS = {
     skills_cat2: "Data Engineering",
     skills_cat3: "Visualization & Marketing",
 
-    // Contact
-    contact_title: "Let\'s talk",
-    contact_desc: "I\'m open to remote roles across LATAM and globally, and on-site positions in Medellín or Bogotá. If you\'re looking for someone who understands both data and business, reach out.",
+    // Contact & form
+    contact_title: "Let's talk",
+    contact_desc: "I'm open to 100% remote roles across LATAM and globally, and on-site in Medellín. If you're looking for someone who understands both data and business — let's connect.",
+    form_name_label: "Name",
+    form_email_label: "Email",
+    form_message_label: "Message",
     form_name_placeholder: "Your name",
     form_email_placeholder: "you@email.com",
     form_message_placeholder: "Tell me how I can help...",
     form_submit: "Send message",
-    form_success: "Message sent! I\'ll get back to you soon.",
-    form_error: "Something went wrong. Email me directly.",
     form_sending: "Sending...",
+    form_success: "Message sent! I'll get back to you soon.",
+    form_error: "Something went wrong. Email me directly.",
 
     // Footer
     footer_back: "Back to top ↑",
+    footer_copy: "Carlos Yepes · Medellín, Colombia",
+    page_title: "Carlos Yepes | Data Analyst & Engineer",
+    meta_desc: "Carlos Yepes — Data Analyst & Engineer. Turning data into business decisions. Python, SQL, AWS, Power BI.",
   }
 };
 
@@ -127,30 +145,40 @@ const applyLang = (lang) => {
   const t = TRANSLATIONS[lang];
   if (!t) return;
 
-  // Textos normales
+  // Textos innerHTML
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
     if (t[key] !== undefined) el.innerHTML = t[key];
   });
 
-  // Placeholders
+  // Placeholders de inputs/textarea
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
     const key = el.dataset.i18nPlaceholder;
     if (t[key] !== undefined) el.placeholder = t[key];
   });
 
-  // Atributo lang del html
+  // aria-labels
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+    const key = el.dataset.i18nAria;
+    if (t[key] !== undefined) el.setAttribute("aria-label", t[key]);
+  });
+
+  // lang del html root
   document.getElementById("htmlRoot")?.setAttribute("lang", lang);
 
-  // Botón de idioma
+  // Texto del botón (muestra el idioma al que cambia)
   const btn = document.getElementById("langToggle");
   if (btn) btn.textContent = lang === "es" ? "EN" : "ES";
 
-  // Guardar preferencia
+  // Actualizar title y meta description
+  if (t.page_title) document.title = t.page_title;
+  const metaDesc = document.getElementById("metaDesc");
+  if (metaDesc && t.meta_desc) metaDesc.setAttribute("content", t.meta_desc);
+
   localStorage.setItem("lang", lang);
 };
 
-// Lang toggle
+// Inicializar idioma guardado
 const langToggle = document.getElementById("langToggle");
 const savedLang = localStorage.getItem("lang") || "es";
 applyLang(savedLang);
@@ -161,6 +189,7 @@ langToggle?.addEventListener("click", () => {
 });
 
 // ─── Formulario: usar claves i18n para mensajes ───────────────────────────────
+
 // Año dinámico en el footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
