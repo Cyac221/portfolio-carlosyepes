@@ -393,9 +393,11 @@ document.querySelectorAll(".btn, .chip, .lang-toggle, .theme-toggle, .nav__toggl
   let W, H, particles;
 
   function resize() {
-    const hero = canvas.parentElement;
-    W = canvas.width  = hero.offsetWidth;
-    H = canvas.height = hero.offsetHeight;
+    // Usar el viewport height en vez del hero para evitar layout shifts
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    canvas.style.width  = "100%";
+    canvas.style.height = "100%";
   }
 
   function rand(min, max) { return Math.random() * (max - min) + min; }
