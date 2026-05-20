@@ -42,6 +42,30 @@ const TRANSLATIONS = {
     form_submit: "Enviar mensaje", form_sending: "Enviando...",
     form_success: "¡Mensaje enviado! Te respondo pronto.",
     form_error: "Algo falló. Escríbeme directamente a tu email.",
+
+    // Nav nuevas secciones
+    nav_exp: "Experiencia",
+    nav_edu: "Educación",
+
+    // Experiencia
+    exp_title: "Experiencia",
+    exp1_company: "Empresa 1", exp1_role: "Cargo", exp1_date: "Ene 2022 – Actualidad",
+    exp1_desc: "Descripción de responsabilidades y logros principales en esta empresa.",
+    exp1_tag1: "Stack 1", exp1_tag2: "Stack 2", exp1_tag3: "Stack 3",
+    exp2_company: "Empresa 2", exp2_role: "Cargo", exp2_date: "Mar 2021 – Dic 2021",
+    exp2_desc: "Descripción de responsabilidades y logros principales en esta empresa.",
+    exp2_tag1: "Stack 1", exp2_tag2: "Stack 2", exp2_tag3: "Stack 3",
+    exp3_company: "Empresa 3", exp3_role: "Cargo", exp3_date: "Jun 2020 – Feb 2021",
+    exp3_desc: "Descripción de responsabilidades y logros principales en esta empresa.",
+    exp3_tag1: "Stack 1", exp3_tag2: "Stack 2", exp3_tag3: "Stack 3",
+
+    // Educación
+    edu_title: "Educación",
+    edu1_title: "Profesional en Mercadeo", edu1_inst: "Institución 1", edu1_year: "2022",
+    edu2_title: "Tecnología en Mercadeo",  edu2_inst: "Institución 2", edu2_year: "2020",
+    edu3_title: "Técnica en Desarrollo de Software", edu3_inst: "Institución 3", edu3_year: "2023",
+    edu4_title: "Cursos complementarios", edu4_inst: "Varias plataformas", edu4_year: "2021 – presente",
+
     footer_back: "Volver arriba ↑",
     footer_copy: "Carlos Yepes · Medellín, Colombia",
     page_title: "Carlos Yepes | Data Analyst & Engineer",
@@ -85,6 +109,30 @@ const TRANSLATIONS = {
     form_submit: "Send message", form_sending: "Sending...",
     form_success: "Message sent! I'll get back to you soon.",
     form_error: "Something went wrong. Email me directly.",
+
+    // Nav nuevas secciones
+    nav_exp: "Experience",
+    nav_edu: "Education",
+
+    // Experience
+    exp_title: "Experience",
+    exp1_company: "Company 1", exp1_role: "Role", exp1_date: "Jan 2022 – Present",
+    exp1_desc: "Description of responsibilities and main achievements at this company.",
+    exp1_tag1: "Stack 1", exp1_tag2: "Stack 2", exp1_tag3: "Stack 3",
+    exp2_company: "Company 2", exp2_role: "Role", exp2_date: "Mar 2021 – Dec 2021",
+    exp2_desc: "Description of responsibilities and main achievements at this company.",
+    exp2_tag1: "Stack 1", exp2_tag2: "Stack 2", exp2_tag3: "Stack 3",
+    exp3_company: "Company 3", exp3_role: "Role", exp3_date: "Jun 2020 – Feb 2021",
+    exp3_desc: "Description of responsibilities and main achievements at this company.",
+    exp3_tag1: "Stack 1", exp3_tag2: "Stack 2", exp3_tag3: "Stack 3",
+
+    // Education
+    edu_title: "Education",
+    edu1_title: "Marketing Professional Degree", edu1_inst: "Institution 1", edu1_year: "2022",
+    edu2_title: "Marketing Technology Degree",   edu2_inst: "Institution 2", edu2_year: "2020",
+    edu3_title: "Software Development Technician", edu3_inst: "Institution 3", edu3_year: "2023",
+    edu4_title: "Complementary Courses", edu4_inst: "Various platforms", edu4_year: "2021 – present",
+
     footer_back: "Back to top ↑",
     footer_copy: "Carlos Yepes · Medellín, Colombia",
     page_title: "Carlos Yepes | Data Analyst & Engineer",
