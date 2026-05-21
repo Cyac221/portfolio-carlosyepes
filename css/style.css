@@ -979,3 +979,11 @@ input, textarea, .contact__icon {
   border: none;
   padding: 2px;
 }
+
+/* ── Contact icons con logos reales ──────────────────────────────────────── */
+.contact__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
