@@ -987,3 +987,13 @@ input, textarea, .contact__icon {
   object-fit: contain;
   border-radius: 4px;
 }
+
+/* ── Botón CV ─────────────────────────────────────────────────────────────── */
+.btn--cv {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.btn--cv:hover {
+  background: var(--accent-dim);
+}
