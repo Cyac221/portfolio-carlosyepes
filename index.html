@@ -112,7 +112,6 @@
           <div class="filters">
             <button class="chip is-active" data-filter="all" data-i18n="filter_all">Todos</button>
             <button class="chip" data-filter="etl" data-i18n="filter_etl">ETL / Data Eng.</button>
-            <button class="chip" data-filter="dashboard" data-i18n="filter_dashboard">Dashboards</button>
             <button class="chip" data-filter="ml" data-i18n="filter_ml">ML / Modelos</button>
           </div>
         </div>
@@ -147,17 +146,17 @@
             </div>
           </article>
 
-          <article class="project card reveal reveal-delay-3" data-tags="dashboard">
+          <article class="project card reveal reveal-delay-3" data-tags="etl">
             <div class="project__header">
-              <span class="project__tag">Dashboard</span>
+              <span class="project__tag">Pipeline ETL</span>
             </div>
-            <h3><strong data-i18n="proj3_title">ETL End to end Cloud (En construccion)</strong></h3>
-            <p data-i18n="proj3_desc">ETL End to end usando Psycopg2 Postgresql y SQL en python. Diseño de un Datawarehouse en Redshift (AWS) para el modelado y almacenamiento de datos</p>
+            <h3><strong data-i18n="proj3_title">Pipeline Medallion — Bronze/Silver/Gold</strong></h3>
+            <p data-i18n="proj3_desc">Diseño e implementación de un pipeline de datos con Arquitectura Medallion (Bronze → Silver → Gold) sobre datos de criptomonedas en tiempo real vía API de CoinGecko. Orquestado con Apache Airflow y procesado con PySpark</p>
             <ul class="tags">
-              <li>Python</li><li>SQL</li><li>Redshift</li><li>AWS</li><li>pgAdmin</li>
+              <li>Python</li><li>SQL</li><li>Airflow</li><li>PySpark</li><li>Docker</li><li>Requests</li>
             </ul>
             <div class="actions">
-              <a class="btn btn--small" href="https://github.com/Cyac221/ETL-Python-PostgreSQL" target="_blank" rel="noreferrer">Código</a>
+              <a class="btn btn--small" href="https://github.com/Cyac221/crypto-medallion-pipeline" target="_blank" rel="noreferrer">Código</a>
             </div>
           </article>
 
